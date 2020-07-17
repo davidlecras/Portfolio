@@ -1,0 +1,321 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<!-- Btn flottant gauche petit menu -->
+
+	<div class="btn-rond-menu">
+		<div class="cont-ligne">
+			<div class="ligne-unique"></div>
+		</div>
+	</div>
+
+	<!-- Navigation verticale -->
+
+	<nav class="nav-gauche">
+
+		<div class="blocs-menu">
+			<div class="cercle-portrait">
+				<img src="{{asset("images/ressources/boss.svg")}}" alt="portrait img">
+			</div>
+		</div>
+
+		<div class="blocs-menu">
+			<span class="nav-menu-item">
+				<a href="#accueil">
+					Accueil
+				</a>
+			</span>
+		</div>
+		<div class="blocs-menu">
+			<span class="nav-menu-item">
+				<a href="#pres">
+					Présentation
+				</a>
+			</span>
+		</div>
+		<div class="blocs-menu">
+			<span class="nav-menu-item">
+				<a href="#port">
+					Portfolio
+				</a>
+			</span>
+		</div>
+		<div class="blocs-menu">
+			<span class="nav-menu-item">
+				<a href="#range">
+					Compétences
+				</a>
+			</span>
+		</div>
+		<div class="blocs-menu">
+			<span class="nav-menu-item">
+				<a href="#contact">
+					Contact
+				</a>
+			</span>
+		</div>
+
+
+		<div class="blocs-menu">
+			<div class="logo-cercle">
+				<a href="#contact">
+					<img src="{{asset("images/ressources/contact.svg")}}" alt="logo contact">
+				</a>
+			</div>
+		</div>
+
+	</nav>
+
+	<!-- Section Accueil -->
+
+	<section class="accueil" id="accueil" style="background-image:url('{{ asset('images/ressources/accueil.jpg') }}')">
+
+		<h1>Bienvenue sur mon portfolio</h1>
+		<p class="txt-animation"></p>
+		<a href="#port" class="btn-acc btn-acc1">Portfolio</a>
+		<a href="#exp" class="btn-acc btn-acc2">Expériences</a>
+
+		<div class="medias">
+			<a href="https://github.com/davidlecras" target="blank">
+				<div class="media media1">
+					<img src="{{asset("images/ressources/github.svg")}}" alt="github icone" class="icone-medias">
+				</div>
+			</a>
+			<a href="https://www.linkedin.com/in/david-lecras-837b96196/" target="blank">
+				<div class="media media2">
+					<img src="{{asset("images/ressources/linkedin.svg")}}" alt="linkedin icone" class="icone-medias">
+				</div>
+			</a>
+			<a href="https://www.instagram.com/davidlecras/?hl=fr" target="blank">
+				<div class="media media3">
+					<img src="{{asset("images/ressources/insta.png")}}" alt="twitter icone" class="icone-medias">
+				</div>
+			</a>
+		</div>
+
+		<a href="#pres">
+			<div class="btn-rond">
+				<img src="{{asset("images/ressources/arrowDown.svg")}}" alt="logo fleche bas" class="logo-btn-rond-acc">
+			</div>
+		</a>
+	</section>
+
+	<!-- Section Présentation -->
+
+	<section class="presentation" id="pres">
+
+		<h2 class="titre-pres">Lorem ipsum dolor sit amet.</h2>
+
+		<div class="container-presentation">
+
+			<div class="fond-forme"></div>
+
+			<div class="pres-gauche">
+				<h3>Laborum cumque aliquid ut pariatur, natus maxime.</h3>
+				<hr>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!</p>
+				<br>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi facere illum ullam exercitationem praesentium veniam?
+				</p>
+			</div>
+
+			<div class="pres-droite">
+				<ul class="liste-presentation">
+					<li class="item-liste i1">
+						<span class="chiffre-style">1.</span>
+						<p class="txt-liste">UX Design expert</p>
+					</li>
+					<li class="item-liste i2">
+						<span class="chiffre-style">2.</span>
+						<p class="txt-liste">Spécialiste UI</p>
+					</li>
+					<li class="item-liste i3">
+						<span class="chiffre-style">3.</span>
+						<p class="txt-liste">Développeur Back-end</p>
+					</li>
+					<li class="item-liste i4">
+						<span class="chiffre-style">4.</span>
+						<p class="txt-liste">Développeur Front-End</p>
+					</li>
+					<li class="item-liste i5">
+						<span class="chiffre-style">5.</span>
+						<p class="txt-liste">Développeur Full-Stack</p>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</section>
+
+	<!-- Section Portfolio -->
+
+	<section class="portfolio" id="port">
+
+
+		<h2 class="titre-port">Mon Portfolio</h2>
+
+		<div class="cont-portfolio">
+
+			{% for project in projects %}
+				<div class="item vague">
+					<div class="cont-img-port">
+						<img src="ressources/bootstrap.jpg" alt="img portfolio">
+					</div>
+					<h3>{{project.title}}</h3>
+					<p>{{project.description}}</p>
+					<a href="{{project.URL}}" class="btn-projets" target="blank">Découvrez le projet</a>
+				</div>
+			{% endfor %}
+
+		</div>
+
+
+	</section>
+
+	<!-- Section Range -->
+
+	<section class="section-range" id="range">
+
+		<h2 class="titre-exp">Mes compétences</h2>
+
+		<div class="grille-skill">
+
+
+			<div class="range-cont">
+				<p class="label-skill">JavaScript</p>
+				<p class="number-skill">90%</p>
+				<div class="barre-skill b1"></div>
+				<div class="barre-grises"></div>
+			</div>
+			<div class="range-cont">
+				<p class="label-skill">SEO</p>
+				<p class="number-skill">75%</p>
+				<div class="barre-skill b2"></div>
+				<div class="barre-grises"></div>
+			</div>
+			<div class="range-cont">
+				<p class="label-skill">UI / UX</p>
+				<p class="number-skill">70%</p>
+				<div class="barre-skill b3"></div>
+				<div class="barre-grises"></div>
+			</div>
+
+
+			<div class="range-cont">
+				<p class="label-skill">Node JS</p>
+				<p class="number-skill">80%</p>
+				<div class="barre-skill b4"></div>
+				<div class="barre-grises"></div>
+			</div>
+			<div class="range-cont">
+				<p class="label-skill">Wordpress</p>
+				<p class="number-skill">70%</p>
+				<div class="barre-skill b5"></div>
+				<div class="barre-grises"></div>
+			</div>
+			<div class="range-cont">
+				<p class="label-skill">React JS</p>
+				<p class="number-skill">80%</p>
+				<div class="barre-skill b6"></div>
+				<div class="barre-grises"></div>
+			</div>
+
+
+		</div>
+
+	</section>
+
+	<!-- Section -->
+
+	<section class="travail-exp" id="exp">
+
+		<h2 class="titre-travail-exp">Mes expériences</h2>
+
+		<div class="cont-exp-travail">
+
+			<div class="barre-verticale">
+				<div class="boule-ico">
+					<img src="{{asset('images/ressources/X2.png')}}" alt="icone gauche">
+				</div>
+				<div class="boule-ico">
+					<img src="{{asset('images/ressources/ELAL.png')}}" alt="icone gauche">
+
+				</div>
+				<div class="boule-ico">
+					<img src="{{asset('images/ressources/next.png')}}" alt="icone gauche">
+				</div>
+				<div class="boule-ico">
+					<img src="{{asset('images/ressources/air-calin.png')}}" alt="icone gauche">
+				</div>
+				<div class="boule-ico">
+					<img src="{{asset('images/ressources/plane.svg')}}" class="avion" alt="icone gauche">
+				</div>
+			</div>
+
+
+			<div class="flex-cont-bloc-exp">
+
+				<div class="bloc bloc1">
+					<div class="contenu-bloc">
+						<p class="titre-section-bloc">SkyKeys (stage), 2020</p>
+						<p class="txt-section">Scrapping d’un site web pour développer une API : utilisation de Puppeteer, Axios et Cheerio. Développement partiel d’applications mobile sous Flutter avec le langage Dart. Modification d’un site sur WordPress.</p>
+					</div>
+				</div>
+
+				<div class="bloc bloc2">
+					<div class="contenu-bloc">
+						<p class="titre-section-bloc">EL AL Israël Airlines, 2012-2020</p>
+						<p class="txt-section">Gestion des effectifs. Suivi des objectifs individuels et du service. Traitement des appels conflictuels et des relations avec les agences de voyages. Traitement des dossiers à fort enjeu commercial (groupes, agences de voyages, VIP). Formateur Amadeus (90% de taux de réussite des nouveaux employés).</p>
+					</div>
+				</div>
+
+				<div class="bloc bloc3">
+					<div class="contenu-bloc">
+						<p class="titre-section-bloc">Next Formation (reconversion professionnelle), 2019-2020</p>
+						<p class="txt-section">Maquettage de sites et/ou d’applications mobiles. Création de sites web statiques. Création de sites et d’applications dynamiques. Création de bases de données relationnelles ou non-relationnelles. Utilisation de GIT... Développement d’un projet pour la validation du titre professionnel.</p>
+					</div>
+				</div>
+
+				<div class="bloc bloc4">
+					<div class="contenu-bloc">
+						<p class="titre-section-bloc">Aircalin, 2009-2012</p>
+						<p class="txt-section">Conseils aux clients (par téléphone, en front, à l’aéroport). Vente et émission de billets.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Section Parallax -->
+	<div class="section-parallax" style="background-image:url('{{ asset('images/ressources/accueil.jpg') }}')">
+		<p class="txt-par">632 tasses de café</p>
+		<p class="txt-par">22 projets</p>
+		<p class="txt-par">100% motivé</p>
+	</div><!-- Section Contact --><section class="section-contact" id="contact">
+		<h2>
+			<strong>Rentrons</strong>
+			en Contact</h2>
+		<div class="container-form">
+			<form class="form-bloc">
+
+				<div class="form-groupe">
+					<label for="prenom">Prénom</label>
+					<input type="text" required maxlength="16" id="prenom">
+				</div>
+				<div class="form-groupe">
+					<label for="nom">Nom</label>
+					<input type="text" required maxlength="16" id="nom">
+				</div>
+				<div class="form-groupe">
+					<textarea id="txt" placeholder="Votre message" required></textarea>
+				</div>
+
+				<div class="form-groupe">
+					<input type="submit" value="ENVOYER" class="button-sub">
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer>Tout Droits réservés &copy; <a href="{{path('signin')}}">David Lecras</a></footer>
+{% endblock %}

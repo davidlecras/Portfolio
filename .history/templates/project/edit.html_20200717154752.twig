@@ -1,0 +1,9 @@
+{% extends 'projects/index.html.twig' %}
+{% block body %}
+	<section class="container my-5">
+		{{ form_start(formP)}}
+		{{form_widget(formP)}}
+		<input type="submit" value="Valider" class="btn btn-primary">
+		{{form_end(formP)}}
+	</section>
+{% endblock %}
