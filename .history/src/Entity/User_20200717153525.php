@@ -4,18 +4,11 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(
- * fields={"email"},
- * message="Vous êtes déjà chez nous"
- * )
  */
-class User implements UserInterface
+class User
 {
     /**
      * @ORM\Id()
@@ -31,26 +24,11 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Email(
-     *  message = "l'email '{{ value }}' n'est pas valide."
-     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(
-     *  min = 10,
-     *  max = 20,
-     *  minMessage = "Votre mot de passe doit faire au minimum {{ limit }} caractères",
-     *  maxMessage = "Votre mot de passe doit faire au maximum {{ limit }} caractères",
-     *  allowEmptyString = false
-     * )
-     * @Assert\Regex(
-     *     pattern="/^(?=.{10,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$/",
-     *     match=true,
-     *     message="Le mot de passe doit contenir au moins 1 majuscule 1 chiffre et 1 caractère spécial"
-     * )
      */
     private $password;
 
@@ -100,9 +78,9 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRoles()
+    public function getRoles(): ?string
     {
-        return [$this->roles];
+        return $this->roles;
     }
 
     public function setRoles(string $roles): self
@@ -110,14 +88,5 @@ class User implements UserInterface
         $this->roles = $roles;
 
         return $this;
-    }
-    public function eraseCredentials()
-    {
-        
-    }
-
-    public function getSalt()
-    {
-        
     }
 }

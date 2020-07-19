@@ -21,6 +21,7 @@ security:
                 login_path: signin
                 check_path: signin
                 username_parameter: _email
+                csrf_token_generator: security.csrf.token_manager
                 default_target_path: project
 
             logout:
@@ -37,6 +38,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
+        
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

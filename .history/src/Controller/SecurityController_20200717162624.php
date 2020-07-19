@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("admin/signup", name="signup")
+     * @Route("admin/security", name="signup")
      */
     public function signup(Request $request, UserPasswordEncoderInterface $userPasswordEncoderInterface, EntityManagerInterface $entityManagerInterface)
     {

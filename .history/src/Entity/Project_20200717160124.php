@@ -51,6 +51,7 @@ class Project
         return $this->imageFile;
     }
 
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -86,7 +87,7 @@ class Project
         return $this->image;
     }
 
-    public function setImage(?string $image): self
+    public function setImage(string $image): self
     {
         $this->image = $image;
 

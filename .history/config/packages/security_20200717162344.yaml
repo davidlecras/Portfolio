@@ -21,7 +21,7 @@ security:
                 login_path: signin
                 check_path: signin
                 username_parameter: _email
-                default_target_path: project
+                default_target_path: projects
 
             logout:
                 path: signout

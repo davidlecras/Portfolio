@@ -9,12 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("admin/signup", name="signup")
+     * @Route("admin/security", name="security")
      */
     public function signup(Request $request, UserPasswordEncoderInterface $userPasswordEncoderInterface, EntityManagerInterface $entityManagerInterface)
     {
@@ -33,25 +32,4 @@ class SecurityController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
-    /**
-     * @Route("/signin", name="signin")
-     */
-    public function signin(AuthenticationUtils $authenticationUtils)
-    {   
-        $error = $authenticationUtils->getLastAuthenticationError();
-        return $this->render('security/signin.html.twig', [
-            'lastUserName' => $authenticationUtils->getLastUsername(),
-            'error' => $error !== null,
-        ]);
-    }
-
-    /**
-     * @Route("/signout", name="signout")
-     */
-    public function signout()
-    {
-        throw new \Exception('This should never be reached!');
-    }
-
 }

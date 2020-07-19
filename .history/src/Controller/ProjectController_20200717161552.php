@@ -6,15 +6,18 @@ use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+/**
+ * @Route("/admin")
+ */
+class ProjectController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/projects", name="projects")
      */
     public function index(ProjectRepository $projectRepository)
     {
-        $projects= $projectRepository->findAll();
-        return $this->render('home/index.html.twig', [
+        $projects = $projectRepository->findAll();
+        return $this->render('projects/index.html.twig', [
             'projects' => $projects,
         ]);
     }

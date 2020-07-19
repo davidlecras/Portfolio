@@ -104,14 +104,14 @@
 
 	<section class="presentation" id="pres">
 
-		<h2 class="titre-pres">À propos de moi</h2>
+		<h2 class="titre-pres">Lorem ipsum dolor sit amet.</h2>
 
 		<div class="container-presentation">
 
 			<div class="fond-forme"></div>
 
 			<div class="pres-gauche">
-				<h3>D'où je viens:</h3>
+				<h3>Laborum cumque aliquid ut pariatur, natus maxime.</h3>
 				<hr>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!</p>
 				<br>
@@ -240,10 +240,11 @@
 					<img src="{{asset('images/ressources/X2.png')}}" alt="icone gauche">
 				</div>
 				<div class="boule-ico">
-					<img src="{{asset('images/ressources/next.png')}}" alt="icone gauche">
+					<img src="{{asset('images/ressources/ELAL.png')}}" alt="icone gauche">
+
 				</div>
 				<div class="boule-ico">
-					<img src="{{asset('images/ressources/ELAL.png')}}" alt="icone gauche">
+					<img src="{{asset('images/ressources/next.png')}}" alt="icone gauche">
 				</div>
 				<div class="boule-ico">
 					<img src="{{asset('images/ressources/air-calin.png')}}" alt="icone gauche">
@@ -265,15 +266,15 @@
 
 				<div class="bloc bloc2">
 					<div class="contenu-bloc">
-						<p class="titre-section-bloc">Next Formation (reconversion professionnelle), 2019-2020</p>
-						<p class="txt-section">Maquettage de sites et/ou d’applications mobiles. Création de sites web statiques. Création de sites et d’applications dynamiques. Création de bases de données relationnelles ou non-relationnelles. Utilisation de GIT... Développement d’un projet pour la validation du titre professionnel.</p>
+						<p class="titre-section-bloc">EL AL Israël Airlines, 2012-2020</p>
+						<p class="txt-section">Gestion des effectifs. Suivi des objectifs individuels et du service. Traitement des appels conflictuels et des relations avec les agences de voyages. Traitement des dossiers à fort enjeu commercial (groupes, agences de voyages, VIP). Formateur Amadeus (90% de taux de réussite des nouveaux employés).</p>
 					</div>
 				</div>
 
 				<div class="bloc bloc3">
 					<div class="contenu-bloc">
-						<p class="titre-section-bloc">EL AL Israël Airlines, 2012-2020</p>
-						<p class="txt-section">Gestion des effectifs. Suivi des objectifs individuels et du service. Traitement des appels conflictuels et des relations avec les agences de voyages. Traitement des dossiers à fort enjeu commercial (groupes, agences de voyages, VIP). Formateur Amadeus (90% de taux de réussite des nouveaux employés).</p>
+						<p class="titre-section-bloc">Next Formation (reconversion professionnelle), 2019-2020</p>
+						<p class="txt-section">Maquettage de sites et/ou d’applications mobiles. Création de sites web statiques. Création de sites et d’applications dynamiques. Création de bases de données relationnelles ou non-relationnelles. Utilisation de GIT... Développement d’un projet pour la validation du titre professionnel.</p>
 					</div>
 				</div>
 
@@ -289,7 +290,7 @@
 	<!-- Section Parallax -->
 	<div class="section-parallax" style="background-image:url('{{ asset('images/ressources/accueil.jpg') }}')">
 		<p class="txt-par">632 tasses de café</p>
-		<p class="txt-par">{{projects|length}} projets</p>
+		<p class="txt-par">22 projets</p>
 		<p class="txt-par">100% motivé</p>
 	</div><!-- Section Contact --><section class="section-contact" id="contact">
 		<h2>
@@ -316,11 +317,5 @@
 			</form>
 		</div>
 	</section>
-	<footer>Tout Droits réservés &copy; 
-	{% if not app.user %}
-	<a href="{{path('signin')}}">David Lecras</a>
-	{% else %}
-	<a href="{{path('projects')}}">Aller aux projets</a>
-	{% endif %}
-	</footer>
+	<footer>Tout Droits réservés &copy; <a href="{{path('signin')}}">David Lecras</a></footer>
 {% endblock %}

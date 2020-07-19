@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Project;
-use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,7 +43,7 @@ class ProjectController extends AbstractController
             return $this->redirectToRoute('projects');
         }
         return $this->render('project/edit.html.twig', [
-            'projects' => $project,
+            'projetcs' => $project,
             'formP' => $formP->createView(),
         ]);
     }

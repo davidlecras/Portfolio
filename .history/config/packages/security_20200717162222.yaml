@@ -5,10 +5,6 @@ security:
             algorithm: auto
     providers:
         users_in_memory: { memory: null }
-        in_database:
-            entity:
-                class: App\Entity\User
-                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -21,7 +17,7 @@ security:
                 login_path: signin
                 check_path: signin
                 username_parameter: _email
-                default_target_path: project
+                default_target_path: projects
 
             logout:
                 path: signout
@@ -37,6 +33,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

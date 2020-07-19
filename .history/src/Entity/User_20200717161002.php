@@ -100,9 +100,9 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRoles()
+    public function getRoles(): ?string
     {
-        return [$this->roles];
+        return $this->roles;
     }
 
     public function setRoles(string $roles): self
@@ -110,14 +110,5 @@ class User implements UserInterface
         $this->roles = $roles;
 
         return $this;
-    }
-    public function eraseCredentials()
-    {
-        
-    }
-
-    public function getSalt()
-    {
-        
     }
 }

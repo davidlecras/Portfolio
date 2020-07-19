@@ -4,13 +4,9 @@ namespace App\Entity;
 
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=ProjectRepository::class)
- * @Vich\Uploadable
  */
 class Project
 {
@@ -23,33 +19,8 @@ class Project
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @var string
      */
     private $image;
-
-        /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     * 
-     * @Vich\UploadableField(mapping="project_image", fileNameProperty="image")
-     * 
-     * @var File|null
-     */
-    private $imageFile;
-
-    public function setImageFile(?File $imageFile = null): self
-    {
-        $this->imageFile = $imageFile;
-        return $this;
-
-        if ($this->imageFile instanceof UploadedFile) {
-            $this->UpdatedAt = new \DateTime('now');
-        }
-    }
-
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -86,7 +57,7 @@ class Project
         return $this->image;
     }
 
-    public function setImage(?string $image): self
+    public function setImage(string $image): self
     {
         $this->image = $image;
 
