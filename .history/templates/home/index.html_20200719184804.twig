@@ -113,12 +113,10 @@
 			<div class="pres-gauche">
 				<h3>D'où je viens:</h3>
 				<hr>
-				<p>J’ai passé une partie de ma vie professionnelle dans le tourisme. J’ai souhaité reprendre mes études et d’entamer une reconversion.
-					Je viens de terminer avec succès ma reconversion professionnelle de développeur web.
-				</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!</p>
 				<br>
 				<p>
-					Je suis actuellement à la recherche d’un poste de développeur web en alternance dans le but de valider un Bacchelor 3 de développeur digital.
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi facere illum ullam exercitationem praesentium veniam?
 				</p>
 			</div>
 
@@ -300,13 +298,14 @@
 		<h2>
 			<strong>Rentrons</strong>
 			en Contact</h2>
-		<div class="container-form">
-			{{form_start(contactForm, {'attr': {'class': 'form-bloc'}})}}
-			{{form_widget(contactForm)}}
-			{{form_end(contactForm)}}
+			<div class="container-form">
+		{{form_start(contactForm, {'attr': {'class': 'form-bloc'}})}}
+		{{form_row(contactForm.prenom)}}
+		{{form_widget(contactForm)}}
+		{{form_end(contactForm)}}
 		</div>
 	</section>
-	<footer>Tous droits réservés &copy;
+	<footer>Tout Droits réservés &copy;
 		{% if not app.user %}
 			<a href="{{path('signin')}}">David Lecras</a>
 		{% else %}
