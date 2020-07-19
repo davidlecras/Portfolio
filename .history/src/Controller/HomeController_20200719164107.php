@@ -29,8 +29,6 @@ class HomeController extends AbstractController
                 'text/html'
             );
             $swift_Mailer->send($message);
-            $this->addFlash('success', 'Votre message a bien été envoyé, les abeilles vous répondrons le plus rapidement possible');
-            return $this->redirectToRoute('home');
         }
         $projects= $projectRepository->findAll();
         return $this->render('home/index.html.twig', [

@@ -298,10 +298,27 @@
 		<h2>
 			<strong>Rentrons</strong>
 			en Contact</h2>
-			<div class="container-form">
-		{{form_start(contactForm)}}
-		{{form_widget(contactForm)}}
-		{{form_end(contactForm)}}
+		<div class="container-form">
+			{{form_start(contactForm,{'attr': {'class': 'form-bloc'}})
+}}
+			<div class="form-groupe">
+				{{form_row(contactForm.nom)}}
+			</div>
+			<div class="form-groupe">
+				{{form_row(contactForm.prenom)}}
+			</div>
+			<div class="form-groupe">
+				{{form_row(contactForm.email)}}
+			</div>
+			<div class="form-groupe">
+				{{form_row(contactForm.objet)}}
+			</div>
+			<div class="form-groupe">
+				{{form_row(contactForm.message)}}
+			</div>
+<div class="form-groupe">
+<input type="submit" value="ENVOYER" class="button-sub">
+</div>
 		</div>
 	</section>
 	<footer>Tout Droits réservés &copy;

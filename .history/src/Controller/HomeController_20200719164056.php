@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Form\ContactType;
 use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,8 +28,6 @@ class HomeController extends AbstractController
                 'text/html'
             );
             $swift_Mailer->send($message);
-            $this->addFlash('success', 'Votre message a bien été envoyé, les abeilles vous répondrons le plus rapidement possible');
-            return $this->redirectToRoute('home');
         }
         $projects= $projectRepository->findAll();
         return $this->render('home/index.html.twig', [
