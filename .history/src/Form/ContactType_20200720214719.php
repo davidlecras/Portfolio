@@ -32,11 +32,10 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('captchaCode', CaptchaType::class, array(
-                'label' => "Êtes-vous un robot?",
-                'captchaConfig' => 'ExampleCaptchaContact',
+                'captchaConfig' => 'ExampleCaptchaUserRegistration',
                 'constraints' => [
                     new ValidCaptcha([
-                        'message' => 'Saisie invalide, veuillez réessayer à nouveau',
+                        'message' => 'Invalid captcha, please try again',
                     ]),
                 ],
             ))
