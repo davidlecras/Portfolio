@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<section class"error">
+<p>
+Attention! Erreur {{status_code}}.
+<a href="{{path("home")}}">Revenir à la page d'accueil du site.</a>
+</p>
+</section>
+{% endblock %}
