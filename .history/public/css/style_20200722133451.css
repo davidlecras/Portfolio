@@ -1061,7 +1061,7 @@ textarea:focus {
   background-position: 100%;
   border: 3px solid #fff;
 }
-.form-group:nth-child(5) label{
+.label-supprime label{
   display: none;
 }
 @media screen and (max-width: 1300px) {
@@ -1071,9 +1071,10 @@ textarea:focus {
   .container-form {
     padding-left: 0;
   }
-  .form-group:nth-child(6) {
+  .form-group:nth-child(4) {
     justify-content: center;
   }
+}
 
 /* Animation Contact */
 

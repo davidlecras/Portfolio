@@ -27,7 +27,8 @@ class ContactType extends AbstractType
             ->add('objet')
             ->add('message', TextareaType::class, [
                 'attr' => [
-                    'placeholder'=>'votre message'
+                    'placeholder'=>'votre message',
+                    'label_attr': {'class': 'foo'}
                 ]
             ])
             ->add('envoyer', SubmitType::class, [

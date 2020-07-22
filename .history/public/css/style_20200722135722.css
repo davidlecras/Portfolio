@@ -1075,6 +1075,11 @@ textarea:focus {
     justify-content: center;
   }
 
+  .BDC_CaptchaDiv{
+    display: inline;
+  }
+}
+
 /* Animation Contact */
 
 .form-group:focus-within label,

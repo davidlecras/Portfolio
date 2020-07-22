@@ -1071,9 +1071,10 @@ textarea:focus {
   .container-form {
     padding-left: 0;
   }
-  .form-group:nth-child(6) {
+  .form-group:nth-child(5) {
     justify-content: center;
   }
+}
 
 /* Animation Contact */
 

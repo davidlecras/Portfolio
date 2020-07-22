@@ -27,6 +27,7 @@ class ContactType extends AbstractType
             ->add('objet')
             ->add('message', TextareaType::class, [
                 'attr' => [
+                    'id' => 'label-message',
                     'placeholder'=>'votre message'
                 ]
             ])
@@ -36,7 +37,6 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('captchaCode', CaptchaType::class, array(
-                'label' => "Êtes-vous un robot?",
                 'captchaConfig' => 'ExampleCaptchaContact',
                 'constraints' => [
                     new ValidCaptcha([
